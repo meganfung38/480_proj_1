@@ -15,5 +15,6 @@
 
 **Program execution from command line: python3 planner.py <algorithm> <world-file>**
 - algorithm specifies search algorithm
+  - either: uniform-cost or depth-first
 - world-file specifies the path to the .txt file
 
