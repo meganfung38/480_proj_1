@@ -22,6 +22,10 @@
 - making the world grid:
   
   `./make_vacuum_world.py <row> <column> <percentage of blocked cells> <dirty cells> > <txt file>`
+
+  * NOTE: must change permissions on world generator script to execute
+
+    `chmod +x make_vacuum_world.py`
   
 - running vacuum plan:
   
