@@ -18,3 +18,9 @@
   - either: uniform-cost or depth-first
 - world-file specifies the path to the .txt file
 
+**Command line execution**
+- making the world grid
+  ./make_vacuum_world.py <row> <column> <percentage of blocked cells> <dirty cells> > <txt file>
+- running vacuum plan
+  python3 planner.py <algorithm> <txt file>
+
