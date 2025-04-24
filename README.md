@@ -13,11 +13,6 @@
 
 **Output: plan/ sequence of actions (N, S, E, W, V), number of nodes generated, number of nodes expanded**
 
-**Program execution from command line: python3 planner.py <algorithm> <world-file>**
-- algorithm specifies search algorithm
-  - either: uniform-cost or depth-first
-- world-file specifies the path to the .txt file
-
 **Command line execution**
 - making the world grid:
   
@@ -29,6 +24,9 @@
   
 - running vacuum plan:
   
-  `python3 planner.py <algorithm> <txt file>`
+  `python3 planner.py <algorithm> <world-file>`
   
+  - algorithm specifies search algorithm
+    - either: uniform-cost or depth-first
+  - world-file specifies the path to the .txt file
 
