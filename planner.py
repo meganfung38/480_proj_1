@@ -16,10 +16,13 @@ def ucs(world_grid, start, goals):
     while frontier:
         cost, current_state, current_goals, path = heapq.heappop(frontier)
 
-        # check if current node has been visited
-        if not ((current_state, current_goals) in visited):
-            visited.add((current_state, current_goals))  # mark current node as visited
-            nodes_expanded += 1
+        # node has been visited
+        if (current_state, current_goals) in visited:
+            continue
+
+        # if not visited-- add to explored nodes
+        visited.add((current_state, current_goals))
+        nodes_expanded += 1
 
         # grid cleaned-- no more goal states
         if not current_goals:
@@ -55,10 +58,13 @@ def dfs(world_grid, start, goals):
     while frontier:
         current_state, current_goals, path = frontier.pop()
 
-        # check if current node has been visited
-        if not ((current_state, current_goals) in visited):
-            visited.add((current_state, current_goals)) # mark current node as visited
-            nodes_expanded += 1
+        # node has been visited
+        if (current_state, current_goals) in visited:
+            continue
+
+        # if not visited-- add to explored nodes
+        visited.add((current_state, current_goals))
+        nodes_expanded += 1
 
         # grid cleaned-- no more goal states
         if not current_goals:
@@ -102,7 +108,7 @@ def valid_actions(current_state, goals, world_grid):
         new_r, new_c = dr + curr_r, dc + curr_c  # compute new state position
         if 0 <= new_r < grid_rows and 0 <= new_c < grid_cols:  # new state position is within grid
             if world_grid[new_r][new_c] != '#':  # new state position is an open cell
-                actions.append(((new_r, new_c), goals.copy(), direction))  # append valid action
+                actions.append(((new_r, new_c), goals, direction))  # append valid action
 
     # check if we can vacuum
     if (curr_r, curr_c) in goals:
